@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <!-- Header -->
     <header>
         <nav class="header-nav">
@@ -34,18 +33,58 @@
         </nav>
     </header>
 
+    <!-- Modal - project details -->
+    <!-- MODAL transaction -->
+    <div class="modal-overlay">
+        <div class="modal-body">
+            <div class="modal-title">
+                <!-- <h3> Project Name </h3> -->
+            </div>
+            <img class="close-modal" src="images/close-window.svg">
+            <div class="modal-content">
+                <div class="maintenance-container">
+                    <img src="images/maintenance.svg" alt="maintenance">
+                    <h4> I'm on it! </h4>
+                    <p> This part is still on the works. Will be up soon!</p>
+                </div>
+                <!-- <section class="modal-section">
+                    <article>
+                        <img src="images/payroll/deduc_panel.jpg">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis aliquam vitae minima
+                            eum
+                            beatae. Quas dolorem eos iure at et.
+                        </p>
+                    </article>
+                </section>
+                <section class="modal-section">
+                    <article>
+                        <img src="images/payroll/deduc_panel.jpg">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis aliquam vitae minima
+                            eum
+                            beatae. Quas dolorem eos iure at et.
+                        </p>
+                    </article>
+                </section> -->
+            </div>
+        </div>
+    </div>
+
+
     <!-- Content -->
     <main class="content">
         <!-- Hero Section -->
         <section class="section hero" id="hero-section">
             <div class="hero-container">
-                <h1> Hi, I'm a student programmer <br> and I love <span class="typing">coffee</span></h1>
+                <h1> Hi, I'm a student programmer <br> and I love co<span class="typing" data-count='3000'
+                        data-words='["ding.","ffee."]'>coffee</span></h1>
                 <div class="btn-container">
-                    <button class="btn-projects"> My Projects </button>
-                    <button class="btn-about"> About Me </button>
+                    <a href="#projects-section" class="btn-projects"> My Projects </a>
+                    <a href="#about-section" class="btn-about"> About Me </a>
                     <div class="btn-container-links">
-                        <img src="images/github-icon.svg" alt="github">
-                        <img src="images/email-address.svg" alt="email">
+                        <a href="https://github.com/JudeBP"><img src="images/github-icon.svg" alt="github"></a>
+                        <a href="#contact-section"><img src="images/email-address.svg" alt="email"></a>
                     </div>
                 </div>
             </div>
@@ -53,7 +92,7 @@
 
         <!-- About Me -->
         <section class="section about-me" id="about-section">
-            <h2>  Who <span class="section-title"> I </span>am </h2>
+            <h2> Who <span class="section-title"> I </span>am </h2>
             <div class="profile-container">
                 <img class="avatar" src="images/avatar.jpg" alt="avatar">
                 <div class="profile-description">
@@ -63,8 +102,12 @@
                         ratione possimus harum.
                     </p>
                     <div class="sm-container">
-                        <img src="images/facebook.svg" alt="facebook">
-                        <img src="images/email-address.svg" alt="email-address">
+                        <img src="images/html.svg">
+                        <img src="images/css.svg">
+                        <img src="images/php.svg">
+                        <img src="images/javascript.svg">
+                        <img src="images/java-programming-language.svg">
+                        <img src="images/sql.svg">
                     </div>
                 </div>
             </div>
@@ -74,11 +117,78 @@
         <section class="section projects" id="projects-section">
             <div class="section-container">
                 <h2> My <span class="section-title">Projects</span></h2>
-                <div class="projects-container">
-                    <div class="project"></div>
-                    <div class="project"></div>
-                    <div class="project"></div>
-                </div>
+                <ul class="projects-container">
+                    <li>
+                        <div class="project">
+                            <img src="images/payroll/payroll_panel.jpg" alt="payroll">
+                            <div class="title">
+                                <h4>Basic Payroll System</h4>
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem quos voluptatum
+                                    incidunt
+                                    nam dolorem saepe ut ex nihil earum repudiandae!
+                                </p>
+                                <div class="btn-container">
+                                    <a href="https://github.com/JudeBP"><img src="images/github-icon.svg"></a>
+                                    <button class="btn-details open-modal"> Details </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="project">
+                            <img src="images/supply_chain/tracker.jpg" alt="payroll">
+                            <div class="title">
+                                <h4>Supply Chain Recorder</h4>
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem quos voluptatum
+                                    incidunt
+                                    nam dolorem saepe ut ex nihil earum repudiandae!
+                                </p>
+                                <div class="btn-container">
+                                    <a href="https://github.com/JudeBP"><img src="images/github-icon.svg"></a>
+                                    <button class="btn-details open-modal"> Details </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="project">
+                            <img src="images/mobile/mobile.jpg" alt="payroll">
+                            <div class="title">
+                                <h4>Attendance Recorder</h4>
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem quos voluptatum
+                                    incidunt
+                                    nam dolorem saepe ut ex nihil earum repudiandae!
+                                </p>
+                                <div class="btn-container">
+                                    <a href="https://github.com/JudeBP"><img src="images/github-icon.svg"></a>
+                                    <button class="btn-details open-modal"> Details </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="project">
+                            <img src="images/mobile/mobile.jpg" alt="payroll">
+                            <div class="title">
+                                <h4>Attendance Recorder</h4>
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem quos voluptatum
+                                    incidunt
+                                    nam dolorem saepe ut ex nihil earum repudiandae!
+                                </p>
+                                <div class="btn-container">
+                                    <a href="https://github.com/JudeBP"><img src="images/github-icon.svg"></a>
+                                    <button class="btn-details open-modal"> Details </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
             </div>
         </section>
 
@@ -97,31 +207,15 @@
     <!-- Footer -->
     <footer>
         <div class="sm-links">
-            <a href="#"> Email </a>
-            <a href="#"> Facebook </a>
-            <a href="#"> Github </a>
+            <a href="#contact-section"> Email </a>
+            <a href="https://www.facebook.com/judepasco/"> Facebook </a>
+            <a href="https://github.com/JudeBP"> Github </a>
         </div>
     </footer>
 
-    <script>
-        // Header navigation responsiveness
-        const toggleBtn = document.querySelector('.hamburger-menu');
-        const links = document.querySelector('.links-container')
-        const header = document.querySelector('.header')
-
-        toggleBtn.addEventListener('click', () => {
-            const linksHeight = links.getBoundingClientRect().height
-            const height = document.querySelector('.header-links').getBoundingClientRect().height;
-            if (linksHeight == 0) {
-                links.style.height = `${height}px`;
-                toggleBtn.style.transform = "rotate(90deg)";
-            } else {
-                links.style.height = "0";
-                toggleBtn.style.transform = "rotate(0deg)";
-            }
-        })
-    </script>
-
+    <script src="js/typing.js"></script>
+    <script src="js/nav.js"> </script>
+    <script src="js/modal.js"> </script>
 </body>
 
 </html>
