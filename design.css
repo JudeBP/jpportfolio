@@ -416,6 +416,7 @@ About Section
     flex-flow: row-reverse wrap;
     justify-content: space-evenly;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .profile-container .avatar {
@@ -430,6 +431,8 @@ About Section
 .profile-description .sm-container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 .profile-description .sm-container > *{
     width: 2rem;
