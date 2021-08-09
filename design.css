@@ -109,7 +109,7 @@ button:hover {
 */
 
 /* Header */
-header {
+.header {
     background: var(--primary2);
 }
 
@@ -319,6 +319,7 @@ Hero Section
 }
 
 .hero-container {
+    box-sizing: border-box;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -327,7 +328,7 @@ Hero Section
 }
 .hero-container h1 {
     padding-left: 0.5rem;
-    margin-right: 30%;
+    /* margin-right: 30%; */
     margin-bottom: 2rem;
     font-weight: normal;
 }
@@ -340,8 +341,8 @@ Hero Section
 }
 
 @keyframes blinkingTxt {
-    from { border-right: 2px solid var(--gray9);}
-    to { border-right: none;}
+    from { border-right-color:  var(--gray9);}
+    to { border-right-color:transparent;}
 }
 
 .hero-container .btn-container {
@@ -417,6 +418,7 @@ About Section
     justify-content: space-evenly;
     align-items: center;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .profile-container .avatar {
@@ -424,9 +426,6 @@ About Section
     border-radius: 50%;
 }
 
-.profile-container p {
-    text-align: center;
-}
 
 .profile-description .sm-container {
     display: flex;
@@ -486,6 +485,7 @@ Projects Section
 .projects-container > li > .project {
     overflow: hidden;
     height: 100%;
+    min-height: 230px;
     max-height: 250px;
     position: relative;
 }
