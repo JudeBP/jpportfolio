@@ -1,5 +1,3 @@
-
-var projects = JSON.parse(`
 [
     {
     "name": "Basic Payroll App",
@@ -63,7 +61,6 @@ var projects = JSON.parse(`
     "img": "images/stock_trade/stock-trade.png",
     "type": "website",
     "git": "https://github.com/JudeBP/jljd-stock-trade",
-    "link": "https://jljdtrades.000webhostapp.com/",
     "toolLinks": [
         "images/html.svg","images/css.svg", "images/php.svg","images/javascript.svg","images/mysql.svg"
         ],
@@ -86,97 +83,4 @@ var projects = JSON.parse(`
             }
         ]
     }
-]`)
-
-const projectsContainer = document.querySelector('.projects-container');
-projects.forEach((project) => {
-    projectsContainer.innerHTML += ` <li>
-                <div class="project">
-                    <img src='${project.img}'>
-                    <div class="title">
-                        <header>
-                            <h4>${project.name}</h4>
-                        </header>
-                        <p> ${project.description} </p>
-                        <div class="btn-container">
-                            <a href="${project.git}" target='_blank' rel='noopener noreferrer'>
-                                <img src="images/github-icon.svg">
-                            </a>
-                            <button class="btn-details open-modal"> Details </button>
-                        </div>
-                    </div>
-                </div>
-            </li>`;
-});
-
-const modalOverlay = document.querySelector('.modal-overlay')
-const openModals = document.querySelectorAll('.open-modal')
-const closeModal = document.querySelector('.close-modal')
-
-openModals.forEach((btn) => {
-    btn.addEventListener('click', function () {
-        modalOverlay.classList.toggle('open-modal')
-        const projectTitle = btn.parentElement.parentElement.querySelector('h4').textContent
-        modalOverlay.querySelector('.modal-title').innerHTML = `<h4>${projectTitle}</h4>`
-        openProject(projectTitle)
-    })
-})
-closeModal.addEventListener('click', function () {
-    modalOverlay.classList.toggle('open-modal')
-})
-window.onclick = function (e) {
-    if (e.target === modalOverlay && modalOverlay.classList.contains('open-modal')) {
-        modalOverlay.classList.remove('open-modal')
-    }
-}
-
-// Open project details 
-function openProject(project) {
-    let hasProject = false
-    // Loop through array of data sections
-    projects.forEach((projectSection) => {
-        // Check if title matches project name
-        if (projectSection.name === project) {
-            // clear sections and add the new sections from array data
-            const modalSections = modalOverlay.querySelector('.modal-content')
-            modalSections.innerHTML = ''
-            let projectTools = document.createElement('div')
-            projectTools.classList.add('modal-tools')
-            projectSection.toolLinks.forEach((tool) => {
-                projectTools.innerHTML += `<img src='${tool}'>`
-            })
-            modalSections.appendChild(projectTools)
-            modalSections.innerHTML += `<div><a href="${projectSection.git}" target='_blank' rel='noopener noreferrer'>
-                    <img class="github-icon" src="images/github-black.svg"></a></div>
-            `
-            projectSection.sections.forEach((section) => {
-                modalSections.innerHTML += `
-                        <section class="modal-section">
-                            <article>
-                                <img src="${section.img}">
-                                <p>${section.description} </p>
-                            </article>
-                        </section>`
-            })
-            hasProject = true;
-            // Check if website type, then add "Visit Site" button
-            if (projectSection.type === 'website') {
-                modalOverlay.querySelector('.modal-title').innerHTML += `
-                <a href='${projectSection.link}' class='btn-visit' 
-                    target='_blank' rel='noopener noreferrer'> Visit Site</a>
-                `
-            }
-        }
-    })
-
-    if (!hasProject) {
-        modalOverlay.querySelector('.modal-content').innerHTML = `
-        <div class="maintenance-container">
-            <img src="images/maintenance.svg" alt="maintenance">
-            <h4> I'm on it! </h4>
-            <p> This part is still on the works. Will be up soon!</p>
-        </div>`
-    }
-}
-
-
+]

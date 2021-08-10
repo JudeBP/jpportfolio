@@ -91,9 +91,8 @@ a {text-align: center;}
 ul {padding: 0; margin: 0;}
 button {padding: 0.7rem 1.25rem; margin: 0.5rem; transition: var(--transition);}
 a:hover,
-button:hover {
-    cursor: pointer;
-}
+button:hover {cursor: pointer;}
+button:disabled { opacity: 0.5; cursor: unset;}
 @media screen and (min-width: 641px) {
     h1 { font-size: 4rem; }
     h2 { font-size: 3rem; }
@@ -111,6 +110,7 @@ button:hover {
 /* Header */
 .header {
     background: var(--primary2);
+    width: 100%;
 }
 
 .header-nav{
@@ -156,6 +156,13 @@ button:hover {
     color:var(--light3);
 }
 
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
 @media screen and (min-width: 641px) {
     .header-nav {
         max-width: var(--max-width);
@@ -178,7 +185,7 @@ button:hover {
     }
 }
 
-/* Modal */
+/* ------------- Modal ---------------- */
 .modal-overlay {
     position: fixed;
     left: 0;
@@ -186,14 +193,13 @@ button:hover {
     height: 100%;
     width: 100%;
     background: rgba(100, 100, 100, .5);
-    display: grid;
-    place-items: center;
-    visibility: hidden;
+    display: none;
     z-index: -10;
 }
 
 .open-modal {
-    visibility: visible;
+    display: grid;
+    place-items: center;
     z-index: 10;
 }
 
@@ -207,20 +213,41 @@ button:hover {
     width: 80%;
     max-width: var(--max-width); 
     margin: auto;
-    /* padding-top: 1rem; */
     text-align: center;
     overflow-y: hidden;
-    filter: drop-shadow(0 0 5px var(--clr-dark));
+    filter: drop-shadow(0 0 10px var(--gray2));
+    -webkit-animation: animatetop 0.4s;
+    animation: animatetop 0.4s;
 }
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+  
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
 .modal-title {
     border-bottom: 1px solid var(--gray9);
-}
-.modal-body h3 {
+    box-sizing: border-box;
     padding: 0.5rem;
-    margin: 0;
+    /* height: 10%; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
 }
+.modal-title > h4 {
+    padding: 0 1rem;
+}
+
 .modal-content {
-    height:100%;
+    min-height: 75%;
+    max-height:90%;
+    /* padding-bottom: 3rem; */
     overflow-y: scroll;
     box-sizing: border-box;
     display: flex;
@@ -235,26 +262,50 @@ button:hover {
 .modal-content::-webkit-scrollbar-thumb {
     background-color: var(--gray4);
     border-radius: 3px;
-    /* outline: 1px solid var(--clr-secondary2); */
+}
+.modal-tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    background: var(--gray12);
+}
+
+.github-icon {
+    width: 3rem;
+    margin: 1rem;
+    margin-bottom: 0;
+    transition: var(--transition);
+}
+.github-icon:hover {
+    transform: translateY(-5px);
+}
+
+.modal-tools img {
+    width: 2rem;
+    margin: 0.5rem;
 }
 
 .modal-section {
     padding: 2rem 1.5rem; 
 }
 .modal-section article{
+    text-align: left;
     display: flex;
     flex-flow: row wrap; 
     justify-content: center;
+    align-items: center;
 }
-.modal-section:last-child article{
+/* .modal-section:last-child article{
     padding-bottom: 2rem;
-}
+} */
 .modal-section:nth-child(odd) article{
     flex-flow: row-reverse wrap;
 }
 .modal-section article img {
     width: 100%;
     max-width: 400px;
+    filter: drop-shadow(0 0 0.5rem var(--gray1));
 }
 .modal-section article > * {
     margin: 1rem;
@@ -270,6 +321,13 @@ button:hover {
 }
 .close-modal:hover {
     cursor: pointer;
+}
+
+@media screen and (min-width: 641px){
+    .modal-tools > img {
+        width: 2.5rem;
+        margin: 1rem;
+    }
 }
 
 @media screen and (min-width: 992px){
@@ -421,9 +479,25 @@ About Section
     text-align: center;
 }
 
-.profile-container .avatar {
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.avatar-container .avatar {
     width: 15rem;
+    margin: 0.5rem;
     border-radius: 50%;
+}
+.avatar-container span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.avatar-container .email {
+    width: 2rem;
+    margin-right: 5px;
 }
 
 
@@ -448,6 +522,12 @@ About Section
     .profile-description .sm-container > *{
         width: 2.5rem;
         margin:1.5rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .profile-container .avatar {
+        width: 21rem;
     }
 }
 
@@ -506,13 +586,16 @@ Projects Section
     flex-direction: column;
     justify-content: space-between; */
 }
-.title h4 {
+.title > header {
+    height: 20%;
+}
+.title > header > h4 {
     padding: 10px;
     font-size: 1.25rem !important;
     font-weight: normal;
     color: white;
 }
-.title p {
+.title > p {
     color: white;
     font-size: 1rem;
     padding: 0 1rem;
@@ -530,24 +613,25 @@ Projects Section
     transform: translateY(-5px);
 }
 .title .btn-container .btn-details,
-.title .btn-container .btn-visit {
+.btn-visit {
     color: white;
     border-radius: 2rem;
     padding: 0.5rem 1.5rem;
+    transition: var(--transition);
 }
 .title .btn-container .btn-details {
     background:transparent;
     border: 2px solid white;
 }
-.title .btn-container .btn-visit {
-    background-color: var(--primary-light5);
-    border: 2px solid var(--primary-light5);
+.btn-visit {
+    background-color: var(--primary-light2);
+    border: 2px solid var(--primary-light2);
 }
 .title .btn-container .btn-details:hover {
     background-color: white;
     color: var(--primary2);
 }
-.title .btn-container .btn-visit:hover {
+.btn-visit:hover {
     color:var(--light5);
 }
 
