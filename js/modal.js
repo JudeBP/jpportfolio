@@ -115,10 +115,11 @@ const closeModal = document.querySelector('.close-modal')
 
 openModals.forEach((btn) => {
     btn.addEventListener('click', function () {
-        modalOverlay.classList.toggle('open-modal')
         const projectTitle = btn.parentElement.parentElement.querySelector('h4').textContent
         modalOverlay.querySelector('.modal-title').innerHTML = `<h4>${projectTitle}</h4>`
         openProject(projectTitle)
+        modalOverlay.classList.toggle('open-modal')
+
     })
 })
 closeModal.addEventListener('click', function () {
