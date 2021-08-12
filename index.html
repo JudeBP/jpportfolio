@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JP | Portfolio</title>
+
+    <link rel="stylesheet" href="design.css">
+    <link rel="icon" href="images/Logo.svg">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="header-nav">
+            <div class="header-container">
+                <a href="#hero-section" class="header-logo">
+                    <img src="images/Logo.png" alt="logo">
+                </a>
+                <div class="hamburger-menu">
+                    <img src="images/hamburger-menu.svg" alt="menu">
+                </div>
+            </div>
+            <div class="links-container">
+                <ul class="header-links">
+                    <li> <a href="#about-section" class="scroll"> About Me </a></li>
+                    <li> <a href="#projects-section" class="scroll"> Portfolio </a></li>
+                    <li> <a href="#contact-section" class="scroll"> Contact </a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Modal - project details -->
+    <!-- MODAL transaction -->
+    <div class="modal-overlay">
+        <div class="modal-body">
+            <div class="modal-title">
+                <h4> </h4>
+            </div>
+            <img class="close-modal" src="images/close-window.svg">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
+
+    <!-- Content -->
+    <main class="content">
+        <!-- Hero Section -->
+        <section class="section hero" id="hero-section">
+            <div class="hero-container">
+                <h1> Hi, I'm a student programmer <br> and I love co<span class="typing" data-count='3000'
+                        data-words='["ding.","ffee."]'></span> :) </h1>
+                <div class="btn-container">
+                    <a href="#projects-section" class="btn-projects scroll"> My Projects </a>
+                    <a href="#about-section" class="btn-about scroll"> About Me </a>
+                    <div class="btn-container-links">
+                        <a href="https://github.com/JudeBP" target='_blank' rel='noopener noreferrer'>
+                            <img src="images/github-icon.svg" alt="github">
+                        </a>
+                        <a href="#contact-section"><img src="images/email-address.svg" alt="email"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section class="section about-me" id="about-section">
+            <h2> Who <span class="section-title"> I </span>am </h2>
+            <div class="profile-container">
+                <div class="avatar-container">
+                    <img class="avatar" src="images/avatar.jpg" alt="avatar">
+                    <span><img src="images/mail.svg" class="email">: judepasco@gmail.com </span>
+                </div>
+                <div class="profile-description">
+                    <p> I'm Jude, a junior computer science student at the Polytechnic University of the Philippines.
+                        Most of my big projects are from school created by our group/team and programmed by me.
+                        I'm now starting my focus on web development and will be sharing more big and small projects
+                        soon. :)
+                    </p>
+                    <div class="sm-container">
+                        <img src="images/html.svg">
+                        <img src="images/css.svg">
+                        <img src="images/php.svg">
+                        <img src="images/javascript.svg">
+                        <img src="images/java-programming-language.svg">
+                        <img src="images/sql.svg">
+                    </div>
+                    <!-- <p> <b> What I use </b></p> -->
+                    <div class="sm-container">
+                        <img src="images/mysql.svg">
+                        <img src="images/figma.svg">
+                        <img src="images/visual-studio-code.svg">
+                        <img src="images/git.svg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section projects" id="projects-section">
+            <div class="section-container">
+                <h2> My <span class="section-title">Projects</span></h2>
+                <ul class="projects-container"> </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section contact" id="contact-section">
+            <h2> Keep in touch </h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Email" disabled>
+                <input type="text" placeholder="Subject" disabled>
+                <textarea disabled name="textarea" cols="30" rows="10" placeholder="What you want to say.."></textarea>
+                <button type="button" class="btn-submit" disabled>Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="sm-links">
+            <a href="#about-section" class="scroll"> Email </a>
+            <a href="https://www.facebook.com/judepasco/" target="_blank"  rel="noopener noreferrer"> Facebook </a>
+            <a href="https://github.com/JudeBP" target="_blank"  rel="noopener noreferrer"> Github </a>
+        </div>
+    </footer>
+
+    <!-- <script></script> -->
+
+    <script src="js/typing.js"></script>
+    <script src="js/nav.js"> </script>
+    <script src="js/modal.js"> </script>
+
+</body>
+
+</html>
