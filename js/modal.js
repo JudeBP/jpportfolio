@@ -147,8 +147,8 @@ function openProject(project) {
                 projectTools.innerHTML += `<img src='${tool}'>`
             })
             modalSections.appendChild(projectTools)
-            modalSections.innerHTML += `<div><a href="${projectSection.git}" target='_blank' rel='noopener noreferrer'>
-                    <img class="github-icon" src="images/github-black.svg"></a></div>
+            modalSections.innerHTML += `<div><a class="btn-view-code" href="${projectSection.git}" target='_blank' rel='noopener noreferrer'>
+                    <img src="images/github-black.svg"> View Code </a></div>
             `
             projectSection.sections.forEach((section) => {
                 modalSections.innerHTML += `

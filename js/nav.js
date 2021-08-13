@@ -43,7 +43,7 @@ scrollBtns.forEach((btn) => {
         if (!fixedNav) {
             position -= navHeight;
         }
-        if (navHeight > 82) {
+        if (navHeight > 88) {
             position += linksHeight;
         }
 
@@ -55,4 +55,10 @@ scrollBtns.forEach((btn) => {
         links.style.height = '0';
         toggleBtn.style.transform = "rotate(0deg)";
     })
+})
+
+document.querySelector('.home-btn').addEventListener('click', function(){
+    window.scrollTo({
+        top: 0
+    });
 })
