@@ -9,9 +9,11 @@ toggleBtn.addEventListener('click', () => {
     if (linksHeight == 0) {
         links.style.height = `${height}px`;
         toggleBtn.style.transform = "rotate(90deg)";
+        header.classList.add('header-colored');
     } else {
         links.style.height = "0";
         toggleBtn.style.transform = "rotate(0deg)";
+        header.classList.remove('header-colored')
     }
 })
 
@@ -21,9 +23,9 @@ window.addEventListener('scroll', () => {
     let headerHeight = header.getBoundingClientRect().height;
 
     if (scrollHeight > headerHeight) {
-        header.classList.add('fixed-header')
+        header.classList.add('header-colored')
     } else {
-        header.classList.remove('fixed-header')
+        header.classList.remove('header-colored')
     }
 })
 

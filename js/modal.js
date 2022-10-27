@@ -3,7 +3,7 @@ var projects = JSON.parse(`
 [
     {
     "name": "Basic Payroll App",
-    "description": "A desktop application that records the attendance of Arrow Phils PH employees and computes their pay",
+    "description": "A desktop application that records the attendance users/employees and computes their pay",
     "img": "images/payroll/payroll_panel.jpg",
     "type": "desktop",
     "git": "https://github.com/JudeBP/payroll-app",
@@ -29,7 +29,7 @@ var projects = JSON.parse(`
     
     {
     "name": "Supply Chain Tracker",
-    "description": "A desktop application that keeps track of the transactions made for the supplies of Arrow Phils PH",
+    "description": "A desktop application that keeps track of the transactions made for the supplies",
     "img": "images/supply_chain/tracker.jpg",
     "type": "desktop",
     "git": "https://github.com/JudeBP/supplychain_tracker",
@@ -56,14 +56,12 @@ var projects = JSON.parse(`
         ]
     },
 
-
     {
     "name": "Stock Trading Website",
     "description": "Basic CRUD website/system for stock trading with basic functionalities and basic security implementations.",
     "img": "images/stock_trade/stock-trade.png",
     "type": "website",
     "git": "https://github.com/JudeBP/jljd-stock-trade",
-    "link": "https://jljdtrades.000webhostapp.com/",
     "toolLinks": [
         "images/html.svg","images/css.svg", "images/php.svg","images/javascript.svg","images/mysql.svg"
         ],
@@ -85,6 +83,36 @@ var projects = JSON.parse(`
                 "description": "The market has all the available stocks for the users to trade, where they can select a stock buy/sell."
             }
         ]
+    },
+
+
+    {
+    "name": "Lecture Management App",
+    "description": "Cross-platform mobile application that manages classes/groups and files for sharing",
+    "img": "images/mobile/login.jpg",
+    "type": "mobile",
+    "git": "https://github.com/JudeBP/lectureManagementApp",
+    "toolLinks": [
+        "images/ionic.svg", "images/laravel.svg","images/angular.svg", "images/typescript.svg","images/mysql.svg"
+        ],
+    "sections": [
+            {
+                "img": "images/mobile/register.jpg",
+                "description": "A user is created through the registration page of the app. Basic fields are needed such as the name, email, username, and password."
+            },
+            {
+                "img": "images/mobile/login.jpg",
+                "description": "User authentication is a part of the system. Loggin in requires the username/email and password of the registered user."
+            },
+            {
+                "img": "images/mobile/groups.jpg",
+                "description": "The list of groups joined can be seen and each group has its members and files shared. If the user is the owner/creatord of the group, he/she can add members through a code."
+            },
+            {
+                "img": "images/mobile/generate-code.jpg",
+                "description": "The generated code is unique for the class/group, and students who want to join can use the code to automatically join the class."
+            }
+        ]
     }
 ]`)
 
@@ -92,7 +120,7 @@ const projectsContainer = document.querySelector('.projects-container');
 projects.forEach((project) => {
     projectsContainer.innerHTML += ` <li>
                 <div class="project">
-                    <img src='${project.img}'>
+                    <img class="${project.type === 'mobile' ? 'project-cover-mobile' : 'project-cover'}" src='${project.img}'>
                     <div class="title">
                         <header>
                             <h4>${project.name}</h4>
@@ -161,12 +189,12 @@ function openProject(project) {
             })
             hasProject = true;
             // Check if website type, then add "Visit Site" button
-            if (projectSection.type === 'website') {
-                modalOverlay.querySelector('.modal-title').innerHTML += `
-                <a href='${projectSection.link}' class='btn-visit' 
-                    target='_blank' rel='noopener noreferrer'> Visit Site</a>
-                `
-            }
+            // if (projectSection.type === 'website') {
+            //     modalOverlay.querySelector('.modal-title').innerHTML += `
+            //     <a href='${projectSection.link}' class='btn-visit' 
+            //         target='_blank' rel='noopener noreferrer'> Visit Site</a>
+            //     `
+            // }
         }
     })
 

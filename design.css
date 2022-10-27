@@ -3,7 +3,6 @@ JP Portfolio Website v2
 Design: Mobile First
 
 Created by: Jude Pasco
-Aug. 8, 2021
 
 */
 
@@ -109,8 +108,9 @@ button:disabled { opacity: 0.5; cursor: unset;}
 
 /* Header */
 .header {
-    background: var(--primary2);
+    /* background: var(--primary2); */
     width: 100%;
+    transition: var(--transition);
 }
 
 .header-nav{
@@ -161,6 +161,11 @@ button:disabled { opacity: 0.5; cursor: unset;}
     top: 0;
     left: 0;
     z-index: 2;
+}
+
+.header-colored {
+    background: var(--primary2);
+    transition: var(--transition);
 }
 
 @media screen and (min-width: 641px) {
@@ -387,11 +392,16 @@ Hero Section
 -------------
 */
 .section.hero {
-    background: var(--primary2);
+    /* background: var(--primary2); */
+    /* background: rgb(12,30,49);
+    background: linear-gradient(152deg, rgba(12,30,49,1) 0%, rgba(16,40,66,1) 35%, rgba(46,71,97,1) 100%);  */
+    background: rgb(12,30,49);
+    background: linear-gradient(38deg, rgba(12,30,49,1) 0%, rgba(16,40,66,1) 63%, rgba(41,68,97,1) 100%); 
     margin-top: 0;
+    padding-top: 88px;
     max-width: unset;
     width: 100%;
-    min-height: 80vh;
+    min-height: 100vh;
     color: white;
 }
 
@@ -584,6 +594,7 @@ Projects Section
 .projects-container > li > .project {
     overflow: hidden;
     height: 100%;
+    background: var(--gray1);
     min-height: 230px;
     max-height: 250px;
     position: relative;
@@ -697,6 +708,24 @@ Contact Section
         width: 60%;
         max-width: 500px;
     }
+}
+
+.icon {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    stroke-width: 0;
+    stroke: white;
+    fill: white;
+}
+
+.project-cover {
+    height: inherit;
+}
+
+.project-cover-mobile {
+    height: inherit;
+    width: unset !important;
 }
 
 /* 
